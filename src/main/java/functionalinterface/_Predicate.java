@@ -20,9 +20,9 @@ public class _Predicate {
                 isPhoneNumberValidPredicate.or(containsNumber3).test("891802"));
 
         //BiPredicate functional interface
-        System.out.println(nameStartsWithSAndLength7.test("Shubham", 7));
-        System.out.println(nameStartsWithSAndLength7.test("Shubham", 8));
-        System.out.println(nameStartsWithSAndLength7.test("Manish", 6));
+        System.out.println(nameStartsWithSAndMatchesLength.test("Shubham", 7));
+        System.out.println(nameStartsWithSAndMatchesLength.test("Shubham", 8));
+        System.out.println(nameStartsWithSAndMatchesLength.test("Manish", 6));
     }
 
     static Predicate<String> isPhoneNumberValidPredicate = phoneNumber ->
@@ -31,7 +31,7 @@ public class _Predicate {
     static Predicate<String> containsNumber3 = phoneNumber ->
             phoneNumber.contains("3");
 
-    static BiPredicate<String, Integer> nameStartsWithSAndLength7 = (name, length) ->
+    static BiPredicate<String, Integer> nameStartsWithSAndMatchesLength = (name, length) ->
             name.startsWith("S") && name.length() == length;
 
     static boolean isPhoneNumberValid(String phoneNumber) {
