@@ -23,15 +23,11 @@ public class _Stream {
                 .collect(Collectors.toSet())
                 .forEach(System.out::println);
 
-        System.out.println("---------------");
-
         //get length of name
         persons.stream()
                 .map(person -> person.name)
                 .mapToInt(String::length)
                 .forEach(System.out::println);
-
-        System.out.println("---------------");
 
         //any match
         boolean anyFemale = persons.stream()
